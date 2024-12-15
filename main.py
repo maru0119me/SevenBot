@@ -59,7 +59,9 @@ else:
         sentry_url,
         traces_sample_rate=1.0,
     )
-    token = TOKEN
+   load_dotenv()
+    TOKEN = os.getenv("TOKEN")
+
     db_name = "production"
 
 
@@ -441,4 +443,4 @@ if __name__ == "__main__":
     print("  Created by 名無し。  ")
     print("*********************")
     print("ログイン中…")
-    bot.run(token)
+    bot.run(TOKEN)
